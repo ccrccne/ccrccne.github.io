@@ -124,6 +124,7 @@ h3 { font: 700 30px/1.15 var(--round); margin: 0 0 10px; color: var(--ink); }
 .stack li { font: 700 13px var(--body); color: var(--muted); background: #f4fbff; border: 2px solid var(--line); border-radius: 999px; padding: 2px 12px; }
 .link { font: 800 15px var(--body); color: var(--sky-deep); text-decoration: none; }
 .link:hover { text-decoration: underline wavy var(--sky); text-underline-offset: 4px; }
+.links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 
 .project.bot { grid-template-columns: 1fr 1fr; }
 .features { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
