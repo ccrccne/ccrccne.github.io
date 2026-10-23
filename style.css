@@ -139,7 +139,7 @@ h3 { font: 700 30px/1.15 var(--round); margin: 0 0 10px; color: var(--ink); }
 .f-star { position: absolute; right: 18px; top: 16px; width: 26px; height: 26px; animation: twinkle 2.4s ease-in-out infinite; }
 
 /* Servicios */
-.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .card {
     background: var(--card); border: 2px solid var(--line); border-radius: 24px; padding: 26px;
     box-shadow: var(--shadow); transition: transform .2s;
