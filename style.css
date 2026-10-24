@@ -342,7 +342,7 @@ h3 { font: 700 26px/1.15 var(--round); margin: 0 0 8px; color: var(--ink); }
 .big-num small { display: block; font: 800 12px var(--body); color: #cfd5ff; }
 
 /* ---------- Dónde encontrarme ---------- */
-.places { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.places { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .place {
     display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; cursor: pointer;
     text-decoration: none; color: var(--ink);
@@ -379,8 +379,7 @@ h3 { font: 700 26px/1.15 var(--round); margin: 0 0 8px; color: var(--ink); }
 .count { font: 700 13px var(--body); color: var(--muted); }
 .shop-free { margin: 22px 0 0; color: var(--text-2); }
 .shop-free a { color: var(--sky-deep); font-weight: 800; }
-.place.kf svg { color: #ff5e5b; background: #ffe5e4; }
-.place.gr svg { color: #e0559c; background: #ffe3f1; }
+.place.kf svg { color: #ff5e5b; background: rgba(255, 94, 91, .16); }
 
 /* ---------- Servicios ---------- */
 .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
