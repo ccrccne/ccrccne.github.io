@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Starfall Theme · ccrccne</title>
+    <meta name="description" content="Un tema para VS Code con los colores del cielo.">
+    <meta name="theme-color" content="#1b2f63">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffd96b' d='M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z' stroke='%23f4b73f' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css?v=5">
+    <script>
+        try {
+            const t = localStorage.getItem("theme");
+            document.documentElement.dataset.theme = t ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        } catch { document.documentElement.dataset.theme = "light"; }
+    </script>
+</head>
+<body>
+    <!-- Formas reutilizables -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" stroke-linejoin="round" stroke-width="1.6"/></symbol>
+        <symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 1c.7 5.6 2.4 8.6 11 11-8.6 2.4-10.3 5.4-11 11-.7-5.6-2.4-8.6-11-11 8.6-2.4 10.3-5.4 11-11z"/></symbol>
+        <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3L18.6 8 12 11.7 5.4 8 12 4.3ZM5 9.7l6 3.3v6.6l-6-3.3V9.7Zm8 9.9V13l6-3.3v6.6l-6 3.3Z" fill="currentColor"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 4h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.6L8 21.5V18H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm3.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" fill="currentColor"/></symbol>
+        <symbol id="i-web" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 5v9h16V9H4Zm1.5-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm1.8 6.3 1.4 1.4-1.8 1.8 1.8 1.8-1.4 1.4-3.2-3.2 3.2-3.2Zm3.4 0 3.2 3.2-3.2 3.2-1.4-1.4 1.8-1.8-1.8-1.8 1.4-1.4Z" fill="currentColor"/></symbol>
+        <symbol id="i-git" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor"/></symbol>
+        <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2.2a7.8 7.8 0 0 1 7.6 6l-2.3.6A5.5 5.5 0 0 0 6.6 12c0 1.2.4 2.3 1 3.2l-1.8 1.4A7.8 7.8 0 0 1 12 4.2Zm0 4.6a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4Z" fill="currentColor"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.6 6.4 10 7.8 5.8 12l4.2 4.2-1.4 1.4L3 12l5.6-5.6Zm6.8 0L21 12l-5.6 5.6-1.4-1.4 4.2-4.2L14 7.8l1.4-1.4Z" fill="currentColor"/></symbol>
+        <symbol id="i-flame" viewBox="0 0 24 24"><path d="M13 2s1 3.2-1.2 5.8C9.6 10.4 7 12 7 15.5A5 5 0 0 0 12 21a5 5 0 0 0 5-5.3c0-2.8-1.6-4.3-1.6-4.3s.2 2.3-1.4 3.1c0 0 .9-3.4-1-6.7C11.9 5.5 13 2 13 2Z" fill="currentColor"/></symbol>
+    </svg>
+
+    <header class="top">
+        <a class="logo" href="../"><svg class="logo-star"><use href="#star"/></svg>ccrccne</a>
+        <nav>
+            <a href="../#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+            <a href="../#jugar"><span lang="es">Jugar</span><span lang="en">Play</span></a>
+            <a class="nav-cta" href="../#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+            <button class="theme" id="theme" aria-label="Cambiar entre modo claro y oscuro / Toggle light and dark mode">
+                <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
+                <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <button class="lang" id="lang" aria-label="Cambiar idioma / Change language">EN</button>
+        </nav>
+    </header>
+
+    <main class="pj">
+        <a class="back" href="../#proyectos">← <span lang="es">Todos mis proyectos</span><span lang="en">All my projects</span></a>
+
+        <section class="pj-hero">
+            <div class="night" aria-hidden="true">
+                <span class="dots"></span>
+                <i class="meteor m1"></i><i class="meteor m3"></i>
+            </div>
+            <div class="pj-text">
+                <p class="badge code"><svg><use href="#i-code"/></svg>VS Code · <span lang="es">tema</span><span lang="en">theme</span></p>
+                <h1>Starfall Theme</h1>
+<p class="lead" lang="es">Un tema para VS Code con los colores del cielo.</p>
+<p class="lead" lang="en">A VS Code theme with the colors of the sky.</p>
+                <ul class="stack"><li>JSON</li><li>VS Code</li><li>shiki</li></ul>
+                <div class="cta">
+                    <a class="btn primary" href="https://github.com/ccrccne/starfall-vscode" target="_blank" rel="noopener"><span lang="es">Código</span><span lang="en">Code</span> ↗</a>
+                </div>
+            </div>
+            <div class="pj-shot"><img src="../img/starfall-theme.png" alt="Starfall Night y Starfall Day en VS Code"></div>
+        </section>
+
+        <section class="pj-about">
+<p class="pj-intro" lang="es">Azul, amarillo estrella y un toque rosita. Viene en dos versiones con la misma paleta: Starfall Night para programar de noche y Starfall Day para cuando hay mucha luz.</p>
+<p class="pj-intro" lang="en">Blue, star yellow and a touch of pink. It comes in two versions with the same palette: Starfall Night for coding at night and Starfall Day for bright days.</p>
+            <div class="feats">
+                <div class="card feat"><svg class="feat-star"><use href="#star"/></svg><h3><span lang="es">Starfall Night</span><span lang="en">Starfall Night</span></h3><p lang="es">Azul noche profundo, suave para la vista.</p>
+<p lang="en">Deep night blue, easy on the eyes.</p></div>
+                <div class="card feat"><svg class="feat-star"><use href="#star"/></svg><h3><span lang="es">Starfall Day</span><span lang="en">Starfall Day</span></h3><p lang="es">Azul cielo clarito y letras bien legibles.</p>
+<p lang="en">Light sky blue with very readable text.</p></div>
+                <div class="card feat"><svg class="feat-star"><use href="#star"/></svg><h3><span lang="es">Todo combina</span><span lang="en">Everything matches</span></h3><p lang="es">Editor, terminal, barra lateral y pestañas con los mismos colores.</p>
+<p lang="en">Editor, terminal, sidebar and tabs share the same colors.</p></div>
+                <div class="card feat"><svg class="feat-star"><use href="#star"/></svg><h3><span lang="es">Cursor estrella</span><span lang="en">Star cursor</span></h3><p lang="es">El cursor y la línea actual se pintan de amarillo estrella.</p>
+<p lang="en">The cursor and current line number glow star yellow.</p></div>
+            </div>
+        </section>
+
+        <section class="pj-install">
+            <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Cómo se instala</span><span lang="en">How to install</span></h2>
+            <ol class="steps">
+                <li><span lang="es">En VS Code abre las extensiones y busca <b>Starfall Theme</b>, o instala el archivo <code>.vsix</code>.</span><span lang="en">In VS Code open Extensions and search for <b>Starfall Theme</b>, or install the <code>.vsix</code> file.</span></li>
+                <li><span lang="es">Pulsa <code>Ctrl + K</code>, <code>Ctrl + T</code> y elige Starfall Night o Starfall Day.</span><span lang="en">Press <code>Ctrl + K</code>, <code>Ctrl + T</code> and pick Starfall Night or Starfall Day.</span></li>
+            </ol>
+        </section>
+
+        <section class="pj-more">
+            <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Otros proyectos</span><span lang="en">Other projects</span></h2>
+            <div class="more-grid">
+                <a class="card more" href="../starfall/"><img src="../img/starfall.gif" alt="" loading="lazy"><span><b>Starfall</b><small><span lang="es">Lluvias de estrellas fugaces para tus noches en Minecraft.</span><span lang="en">Shooting star showers for your Minecraft nights.</span></small></span></a>
+                <a class="card more" href="../cielo-cute/"><img src="../img/cielo-cute.png" alt="" loading="lazy"><span><b>Cielo cute</b><small><span lang="es">Tu inventario, tus botones y tu barra rápida en azul cielo.</span><span lang="en">Your inventory, buttons and hotbar in sky blue.</span></small></span></a>
+                <a class="card more" href="../rachas/"><img src="../img/rachas.png" alt="" loading="lazy"><span><b>Rachas</b><small><span lang="es">Cuántos días seguidos llevas hablando con alguien.</span><span lang="en">How many days in a row you've been talking to someone.</span></small></span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><span lang="es">Hecho con</span><span lang="en">Made with</span> <svg class="foot-star"><use href="#star"/></svg> <span lang="es">por</span><span lang="en">by</span> ccrccne · 2026</p>
+    </footer>
+
+    <script src="../main.js?v=5"></script>
+</body>
+</html>

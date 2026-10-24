@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
     <script>
         // Elige el modo claro u oscuro antes de pintar la página (evita un destello blanco)
         try {
@@ -29,6 +29,7 @@
         <symbol id="i-web" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 5v9h16V9H4Zm1.5-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm1.8 6.3 1.4 1.4-1.8 1.8 1.8 1.8-1.4 1.4-3.2-3.2 3.2-3.2Zm3.4 0 3.2 3.2-3.2 3.2-1.4-1.4 1.8-1.8-1.8-1.8 1.4-1.4Z" fill="currentColor"/></symbol>
         <symbol id="i-git" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor"/></symbol>
         <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2.2a7.8 7.8 0 0 1 7.6 6l-2.3.6A5.5 5.5 0 0 0 6.6 12c0 1.2.4 2.3 1 3.2l-1.8 1.4A7.8 7.8 0 0 1 12 4.2Zm0 4.6a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4Z" fill="currentColor"/></symbol>
+        <symbol id="i-code" viewBox="0 0 24 24"><path d="M8.6 6.4 10 7.8 5.8 12l4.2 4.2-1.4 1.4L3 12l5.6-5.6Zm6.8 0L21 12l-5.6 5.6-1.4-1.4 4.2-4.2L14 7.8l1.4-1.4Z" fill="currentColor"/></symbol>
         <symbol id="i-flame" viewBox="0 0 24 24"><path d="M13 2s1 3.2-1.2 5.8C9.6 10.4 7 12 7 15.5A5 5 0 0 0 12 21a5 5 0 0 0 5-5.3c0-2.8-1.6-4.3-1.6-4.3s.2 2.3-1.4 3.1c0 0 .9-3.4-1-6.7C11.9 5.5 13 2 13 2Z" fill="currentColor"/></symbol>
     </svg>
 
@@ -86,8 +87,8 @@
 
         <!-- Números rápidos -->
         <ul class="stats">
-            <li><b>5</b><span lang="es">proyectos</span><span lang="en">projects</span></li>
-            <li><b>3</b><span lang="es">plataformas</span><span lang="en">platforms</span></li>
+            <li><b>8</b><span lang="es">proyectos</span><span lang="en">projects</span></li>
+            <li><b>4</b><span lang="es">plataformas</span><span lang="en">platforms</span></li>
             <li><b>122</b><span lang="es">comandos en mi bot</span><span lang="en">commands in my bot</span></li>
             <li><b>16</b><span lang="es">colores de lámparas</span><span lang="en">lamp colors</span></li>
         </ul>
@@ -96,10 +97,11 @@
             <div class="section-head">
                 <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
                 <div class="filters" role="group" aria-label="Filtrar proyectos">
-                    <button class="filter" data-filter="all" aria-pressed="true"><span lang="es">Todo</span><span lang="en">All</span> <i>5</i></button>
-                    <button class="filter" data-filter="minecraft" aria-pressed="false"><svg><use href="#i-cube"/></svg>Minecraft <i>1</i></button>
-                    <button class="filter" data-filter="discord" aria-pressed="false"><svg><use href="#i-chat"/></svg>Discord <i>3</i></button>
+                    <button class="filter" data-filter="all" aria-pressed="true"><span lang="es">Todo</span><span lang="en">All</span> <i>8</i></button>
+                    <button class="filter" data-filter="minecraft" aria-pressed="false"><svg><use href="#i-cube"/></svg>Minecraft <i>2</i></button>
+                    <button class="filter" data-filter="discord" aria-pressed="false"><svg><use href="#i-chat"/></svg>Discord <i>4</i></button>
                     <button class="filter" data-filter="web" aria-pressed="false"><svg><use href="#i-web"/></svg>Web <i>1</i></button>
+                    <button class="filter" data-filter="code" aria-pressed="false"><svg><use href="#i-code"/></svg>VS Code <i>1</i></button>
                 </div>
             </div>
 
@@ -113,9 +115,25 @@
                         <p lang="en">Some nights the sky fills with shooting stars that all cross the same way. The ones that fall leave fragments for paper lamps in 16 colors and a wand that leaves floating lights.</p>
                         <ul class="stack"><li>Java</li><li>Fabric</li><li>26.3 + 1.21.1</li><li>pixel art</li></ul>
                         <p class="links">
+                            <a class="link more-link" href="starfall/"><span lang="es">Ver más</span><span lang="en">See more</span> →</a>
                             <a class="link" href="https://modrinth.com/mod/starfall-ccrccne" target="_blank" rel="noopener">Modrinth ↗</a>
                             <a class="link" href="https://www.curseforge.com/minecraft/mc-mods/starfall-star-showers" target="_blank" rel="noopener">CurseForge ↗</a>
                             <a class="link" href="https://github.com/ccrccne/starfall" target="_blank" rel="noopener"><span lang="es">Código</span><span lang="en">Code</span> ↗</a>
+                        </p>
+                    </div>
+                </article>
+
+                <article class="card project" data-cat="minecraft">
+                    <div class="media"><img src="img/cielo-cute.png" alt="Inventario de Minecraft en azul cielo con corazones rosados" loading="lazy"></div>
+                    <div class="info">
+                        <p class="badge mc"><svg><use href="#i-cube"/></svg>Minecraft · <span lang="es">texturas</span><span lang="en">resource pack</span></p>
+                        <h3>Cielo cute</h3>
+                        <p lang="es">Mi paquete de texturas: el inventario, los botones y la barra rápida en azul cielo, con corazones rosados y la casilla elegida dorada.</p>
+                        <p lang="en">My resource pack: inventory, buttons and hotbar in sky blue, with pink hearts and a golden selected slot.</p>
+                        <ul class="stack"><li>Python</li><li>pixel art</li><li>26.3</li></ul>
+                        <p class="links">
+                            <a class="link more-link" href="cielo-cute/"><span lang="es">Ver más</span><span lang="en">See more</span> →</a>
+                            <a class="link" href="https://github.com/ccrccne/cielo-cute" target="_blank" rel="noopener"><span lang="es">Código</span><span lang="en">Code</span> ↗</a>
                         </p>
                     </div>
                 </article>
@@ -128,7 +146,8 @@
                         <p lang="es">Alguien entra a tu llamada, dura dos segundos y se va. ¿Quién era? Una barrita discreta te dice quién entró y salió, y a qué hora.</p>
                         <p lang="en">Someone joins your call for two seconds and leaves. Who was it? A subtle bar tells you who joined and left, and when.</p>
                         <ul class="stack"><li>TypeScript</li><li>React</li><li>Vencord</li><li>BetterDiscord</li></ul>
-                        <p class="links"><a class="link" href="https://github.com/ccrccne/vencord-voicelog" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
+                        <p class="links"><a class="link more-link" href="voicelog/"><span lang="es">Ver más</span><span lang="en">See more</span> →</a>
+                            <a class="link" href="https://github.com/ccrccne/vencord-voicelog" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
                     </div>
                 </article>
 
@@ -140,7 +159,23 @@
                         <p lang="es">Discord te dice que alguien está desconectado, pero no desde cuándo. LastSeen pone "últ. vez hace 2 h" al lado de su nombre.</p>
                         <p lang="en">Discord tells you someone is offline, but not since when. LastSeen adds "last seen 2 h ago" next to their name.</p>
                         <ul class="stack"><li>TypeScript</li><li>React</li><li>Vencord</li><li>BetterDiscord</li></ul>
-                        <p class="links"><a class="link" href="https://github.com/ccrccne/vencord-lastseen" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
+                        <p class="links"><a class="link more-link" href="lastseen/"><span lang="es">Ver más</span><span lang="en">See more</span> →</a>
+                            <a class="link" href="https://github.com/ccrccne/vencord-lastseen" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
+                    </div>
+                </article>
+
+                <article class="card project" data-cat="discord">
+                    <div class="media"><img src="img/rachas.png" alt="Lista de mensajes directos con estrellitas de racha" loading="lazy"></div>
+                    <div class="info">
+                        <p class="badge dc"><svg><use href="#i-chat"/></svg>Discord · plugin</p>
+                        <h3>Rachas</h3>
+                        <p lang="es">Una estrellita al lado de cada amiga con los días seguidos que llevan escribiéndose. Si hoy falta mensaje, sale un relojito.</p>
+                        <p lang="en">A little star next to each friend with the days in a row you've been texting. If today's message is missing, an hourglass shows up.</p>
+                        <ul class="stack"><li>TypeScript</li><li>React</li><li>Vencord</li><li>BetterDiscord</li></ul>
+                        <p class="links">
+                            <a class="link more-link" href="rachas/"><span lang="es">Ver más</span><span lang="en">See more</span> →</a>
+                            <a class="link" href="https://github.com/ccrccne/vencord-rachas" target="_blank" rel="noopener"><span lang="es">Código</span><span lang="en">Code</span> ↗</a>
+                        </p>
                     </div>
                 </article>
 
@@ -169,6 +204,20 @@
                         <p lang="en">My page, where I keep everything I make. I made it with my favorite colors: sky blue and stars everywhere.</p>
                         <ul class="stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li></ul>
                         <p class="links"><a class="link" href="https://github.com/ccrccne/ccrccne.github.io" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
+                    </div>
+                </article>
+                <article class="card project" data-cat="code">
+                    <div class="media"><img src="img/starfall-theme.png" alt="Starfall Night y Starfall Day en VS Code" loading="lazy"></div>
+                    <div class="info">
+                        <p class="badge code"><svg><use href="#i-code"/></svg>VS Code · <span lang="es">tema</span><span lang="en">theme</span></p>
+                        <h3>Starfall Theme</h3>
+                        <p lang="es">Mi tema para programar con los colores del cielo: una versión de noche y otra de día, con la misma paleta.</p>
+                        <p lang="en">My coding theme with the colors of the sky: a night version and a day version, same palette.</p>
+                        <ul class="stack"><li>JSON</li><li>VS Code</li></ul>
+                        <p class="links">
+                            <a class="link more-link" href="starfall-theme/"><span lang="es">Ver más</span><span lang="en">See more</span> →</a>
+                            <a class="link" href="https://github.com/ccrccne/starfall-vscode" target="_blank" rel="noopener"><span lang="es">Código</span><span lang="en">Code</span> ↗</a>
+                        </p>
                     </div>
                 </article>
             </div>
@@ -267,7 +316,7 @@
         <p><span lang="es">Hecho con</span><span lang="en">Made with</span> <svg class="foot-star"><use href="#star"/></svg> <span lang="es">por</span><span lang="en">by</span> ccrccne · 2026</p>
     </footer>
 
-    <script src="main.js?v=4"></script>
+    <script src="main.js?v=5"></script>
     <script src="game.js?v=1"></script>
 </body>
 </html>
