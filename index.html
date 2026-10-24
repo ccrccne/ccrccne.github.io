@@ -3,167 +3,236 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ccrccne · bots, plugins y mods</title>
-    <meta name="description" content="Bots y plugins para Discord y mods de Minecraft hechos a medida. Python, Java, JavaScript y TypeScript.">
-    <meta name="theme-color" content="#bfe5fb">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%237cc8f2' d='M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z' stroke='%233a8fc4' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E">
+    <title>ccrccne · mods, plugins y bots</title>
+    <meta name="description" content="Portafolio de ccrccne: mods de Minecraft, plugins y bots de Discord y webs, hechos con mucho cariño.">
+    <meta name="theme-color" content="#1b2f63">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffd96b' d='M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z' stroke='%23f4b73f' stroke-width='1.2' stroke-linejoin='round'/%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
+    <script>
+        // Elige el modo claro u oscuro antes de pintar la página (evita un destello blanco)
+        try {
+            const t = localStorage.getItem("theme");
+            document.documentElement.dataset.theme = t ?? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+        } catch { document.documentElement.dataset.theme = "light"; }
+    </script>
 </head>
 <body>
-    <!-- Formas reutilizables: estrella redondita y destello -->
+    <!-- Formas reutilizables -->
     <svg width="0" height="0" style="position:absolute" aria-hidden="true">
         <symbol id="star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" stroke-linejoin="round" stroke-width="1.6"/></symbol>
         <symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 1c.7 5.6 2.4 8.6 11 11-8.6 2.4-10.3 5.4-11 11-.7-5.6-2.4-8.6-11-11 8.6-2.4 10.3-5.4 11-11z"/></symbol>
+        <symbol id="i-cube" viewBox="0 0 24 24"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Zm0 2.3L18.6 8 12 11.7 5.4 8 12 4.3ZM5 9.7l6 3.3v6.6l-6-3.3V9.7Zm8 9.9V13l6-3.3v6.6l-6 3.3Z" fill="currentColor"/></symbol>
+        <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 4h14a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3h-6.6L8 21.5V18H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm3.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Zm7 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" fill="currentColor"/></symbol>
+        <symbol id="i-web" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 5v9h16V9H4Zm1.5-3a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm3 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm1.8 6.3 1.4 1.4-1.8 1.8 1.8 1.8-1.4 1.4-3.2-3.2 3.2-3.2Zm3.4 0 3.2 3.2-3.2 3.2-1.4-1.4 1.8-1.8-1.8-1.8 1.4-1.4Z" fill="currentColor"/></symbol>
+        <symbol id="i-git" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.2-3.4-1.2-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor"/></symbol>
+        <symbol id="i-box" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 2.2a7.8 7.8 0 0 1 7.6 6l-2.3.6A5.5 5.5 0 0 0 6.6 12c0 1.2.4 2.3 1 3.2l-1.8 1.4A7.8 7.8 0 0 1 12 4.2Zm0 4.6a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4Z" fill="currentColor"/></symbol>
+        <symbol id="i-flame" viewBox="0 0 24 24"><path d="M13 2s1 3.2-1.2 5.8C9.6 10.4 7 12 7 15.5A5 5 0 0 0 12 21a5 5 0 0 0 5-5.3c0-2.8-1.6-4.3-1.6-4.3s.2 2.3-1.4 3.1c0 0 .9-3.4-1-6.7C11.9 5.5 13 2 13 2Z" fill="currentColor"/></symbol>
     </svg>
 
     <header class="top">
         <a class="logo" href="#"><svg class="logo-star"><use href="#star"/></svg>ccrccne</a>
         <nav>
-            <a href="#proyectos"><span lang="es">proyectos</span><span lang="en">projects</span></a>
-            <a href="#servicios"><span lang="es">servicios</span><span lang="en">services</span></a>
-            <a href="#contacto"><span lang="es">contacto</span><span lang="en">contact</span></a>
+            <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
+            <a href="#donde"><span lang="es">Dónde estoy</span><span lang="en">Find me</span></a>
+            <a href="#servicios"><span lang="es">Servicios</span><span lang="en">Services</span></a>
+            <a class="nav-cta" href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
+            <button class="theme" id="theme" aria-label="Cambiar entre modo claro y oscuro / Toggle light and dark mode">
+                <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
+                <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
             <button class="lang" id="lang" aria-label="Cambiar idioma / Change language">EN</button>
         </nav>
     </header>
 
     <main>
+        <!-- Portada: cielo nocturno con estrellas fugaces -->
         <section class="hero">
-            <div class="sky" aria-hidden="true">
-                <svg class="tw s1"><use href="#sparkle"/></svg>
-                <svg class="tw s2"><use href="#star"/></svg>
-                <svg class="tw s3"><use href="#sparkle"/></svg>
-                <svg class="tw s4"><use href="#star"/></svg>
-                <svg class="tw s5"><use href="#sparkle"/></svg>
-                <svg class="tw s6"><use href="#sparkle"/></svg>
-                <svg class="tw s7"><use href="#star"/></svg>
+            <div class="night" aria-hidden="true">
+                <span class="dots"></span>
+                <i class="meteor m1"></i><i class="meteor m2"></i><i class="meteor m3"></i><i class="meteor m4"></i>
+                <svg class="tw t1"><use href="#sparkle"/></svg>
+                <svg class="tw t2"><use href="#star"/></svg>
+                <svg class="tw t3"><use href="#sparkle"/></svg>
+                <svg class="tw t4"><use href="#star"/></svg>
             </div>
-            <p class="kicker"><span lang="es">✦ bots · plugins · mods ✦</span><span lang="en">✦ bots · plugins · mods ✦</span></p>
-            <h1>
-                <span lang="es">Hago que Discord haga <em>lo que le falta</em></span>
-                <span lang="en">I make Discord do <em>what it's missing</em></span>
-            </h1>
-            <p class="lead">
-                <span lang="es">Bots a medida, plugins para Vencord y BetterDiscord, y mods de Minecraft. Cositas que resuelven molestias reales o hacen el juego más bonito: quién entró a la llamada, desde cuándo está desconectado alguien, una lluvia de estrellas.</span>
-                <span lang="en">Custom bots, plugins for Vencord and BetterDiscord, and Minecraft mods. Little things that fix real annoyances or make the game prettier: who just joined the call, how long someone has been offline, a star shower.</span>
-            </p>
-            <div class="cta">
-                <a class="btn primary" href="#contacto"><span lang="es">Encárgame algo</span><span lang="en">Hire me</span> <svg class="btn-star"><use href="#star"/></svg></a>
-                <a class="btn" href="https://github.com/ccrccne" target="_blank" rel="noopener">GitHub ↗</a>
+
+            <div class="hero-text">
+                <p class="kicker"><svg><use href="#sparkle"/></svg><span lang="es">Hola, soy ccrccne</span><span lang="en">Hi, I'm ccrccne</span></p>
+                <h1>
+                    <span lang="es">Creo cositas <em>bonitas</em> para los juegos y apps que usas</span>
+                    <span lang="en">I make <em>pretty</em> little things for the games and apps you use</span>
+                </h1>
+                <p class="lead">
+                    <span lang="es">Mods de Minecraft, plugins y bots de Discord y páginas web. Me gusta que lo que hago sea útil, pero también que dé gusto mirarlo.</span>
+                    <span lang="en">Minecraft mods, Discord plugins and bots, and websites. I like what I make to be useful, but also nice to look at.</span>
+                </p>
+                <div class="cta">
+                    <a class="btn primary" href="#proyectos"><span lang="es">Ver mis proyectos</span><span lang="en">See my projects</span> <svg class="btn-star"><use href="#star"/></svg></a>
+                    <a class="btn ghost" href="#contacto"><span lang="es">Encárgame algo</span><span lang="en">Hire me</span></a>
+                </div>
+            </div>
+
+            <div class="orbit" aria-hidden="true">
+                <div class="float f1"><svg><use href="#i-cube"/></svg><b>Minecraft</b><small>mods · Fabric</small></div>
+                <div class="float f2"><svg><use href="#i-chat"/></svg><b>Discord</b><small>plugins · bots</small></div>
+                <div class="float f3"><svg><use href="#i-web"/></svg><b>Web</b><small>HTML · CSS · JS</small></div>
+                <svg class="moon" viewBox="0 0 100 100"><defs><mask id="crescent"><rect width="100" height="100" fill="#fff"/><circle cx="68" cy="38" r="34" fill="#000"/></mask></defs><circle cx="50" cy="50" r="40" fill="#fff6d6" mask="url(#crescent)"/></svg>
             </div>
         </section>
 
+        <!-- Números rápidos -->
+        <ul class="stats">
+            <li><b>5</b><span lang="es">proyectos</span><span lang="en">projects</span></li>
+            <li><b>3</b><span lang="es">plataformas</span><span lang="en">platforms</span></li>
+            <li><b>122</b><span lang="es">comandos en mi bot</span><span lang="en">commands in my bot</span></li>
+            <li><b>16</b><span lang="es">colores de lámparas</span><span lang="en">lamp colors</span></li>
+        </ul>
+
         <section id="proyectos" class="projects">
-            <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
-
-            <article class="project">
-                <div class="media"><img src="img/starfall.gif" alt="Lluvia de estrellas en Minecraft sobre un claro con lámparas de papel de colores" loading="lazy"></div>
-                <div class="info">
-                    <p class="tag">mod · Minecraft (Fabric)</p>
-                    <h3>Starfall</h3>
-                    <p lang="es">Algunas noches el cielo de Minecraft se llena de estrellas fugaces que cruzan todas hacia el mismo lado. Las que caen dejan fragmentos para hacer lámparas de papel en 16 colores y una varita que deja luces flotantes.</p>
-                    <p lang="en">Some nights the Minecraft sky fills with shooting stars that all cross in the same direction. The ones that fall leave fragments for paper lamps in 16 colors and a wand that leaves floating lights.</p>
-                    <p class="how" lang="es">Las imágenes son del juego de verdad: una prueba automática abre Minecraft, monta la escena y graba la lluvia fotograma a fotograma.</p>
-                    <p class="how" lang="en">The images are real gameplay: an automated test opens Minecraft, builds the scene and records the shower frame by frame.</p>
-                    <ul class="stack"><li>Java</li><li>Fabric</li><li>Minecraft 26.3</li><li>pixel art</li></ul>
-                    <p class="links">
-                        <a class="link" href="https://modrinth.com/mod/starfall-ccrccne" target="_blank" rel="noopener">Modrinth ↗</a>
-                        <a class="link" href="https://www.curseforge.com/minecraft/mc-mods/starfall-star-showers" target="_blank" rel="noopener">CurseForge ↗</a>
-                        <a class="link" href="https://github.com/ccrccne/starfall" target="_blank" rel="noopener"><span lang="es">Código</span><span lang="en">Code</span> ↗</a>
-                    </p>
+            <div class="section-head">
+                <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Proyectos</span><span lang="en">Projects</span></h2>
+                <div class="filters" role="group" aria-label="Filtrar proyectos">
+                    <button class="filter" data-filter="all" aria-pressed="true"><span lang="es">Todo</span><span lang="en">All</span> <i>5</i></button>
+                    <button class="filter" data-filter="minecraft" aria-pressed="false"><svg><use href="#i-cube"/></svg>Minecraft <i>1</i></button>
+                    <button class="filter" data-filter="discord" aria-pressed="false"><svg><use href="#i-chat"/></svg>Discord <i>3</i></button>
+                    <button class="filter" data-filter="web" aria-pressed="false"><svg><use href="#i-web"/></svg>Web <i>1</i></button>
                 </div>
-            </article>
+            </div>
 
-            <article class="project reverse">
-                <div class="media"><img src="img/voicelog.gif" alt="Demo de VoiceLog: alguien entra a la llamada, sale y queda en el historial" loading="lazy"></div>
-                <div class="info">
-                    <p class="tag">plugin · Vencord + BetterDiscord</p>
-                    <h3>VoiceLog</h3>
-                    <p lang="es">Alguien entra a tu llamada, dura dos segundos y se va. ¿Quién era? VoiceLog anota quién entra y sale del canal de voz y a qué hora, en una barrita discreta que se despliega al pasar el ratón.</p>
-                    <p lang="en">Someone joins your call, stays two seconds and leaves. Who was it? VoiceLog records who joins and leaves the voice channel and when, in a subtle bar that unfolds on hover.</p>
-                    <p class="how" lang="es">Para ponerlo justo debajo de "Invitar a llamada" tuve que buscar ese punto en el código del propio cliente de Discord y engancharme ahí.</p>
-                    <p class="how" lang="en">To place it right under "Invite to call" I had to find that spot in Discord's own client code and hook into it.</p>
-                    <ul class="stack"><li>TypeScript</li><li>React</li><li>Vencord</li><li>BetterDiscord</li></ul>
-                    <a class="link" href="https://github.com/ccrccne/vencord-voicelog" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a>
-                </div>
-            </article>
+            <div class="grid-projects">
+                <article class="card project featured" data-cat="minecraft">
+                    <div class="media"><img src="img/starfall.gif" alt="Lluvia de estrellas en Minecraft sobre lámparas de papel de colores" loading="lazy"></div>
+                    <div class="info">
+                        <p class="badge mc"><svg><use href="#i-cube"/></svg>Minecraft · mod</p>
+                        <h3>Starfall</h3>
+                        <p lang="es">Algunas noches el cielo se llena de estrellas fugaces que cruzan todas hacia el mismo lado. Las que caen dejan fragmentos para hacer lámparas de papel en 16 colores y una varita que deja luces flotantes.</p>
+                        <p lang="en">Some nights the sky fills with shooting stars that all cross the same way. The ones that fall leave fragments for paper lamps in 16 colors and a wand that leaves floating lights.</p>
+                        <ul class="stack"><li>Java</li><li>Fabric</li><li>26.3 + 1.21.1</li><li>pixel art</li></ul>
+                        <p class="links">
+                            <a class="link" href="https://modrinth.com/mod/starfall-ccrccne" target="_blank" rel="noopener">Modrinth ↗</a>
+                            <a class="link" href="https://www.curseforge.com/minecraft/mc-mods/starfall-star-showers" target="_blank" rel="noopener">CurseForge ↗</a>
+                            <a class="link" href="https://github.com/ccrccne/starfall" target="_blank" rel="noopener"><span lang="es">Código</span><span lang="en">Code</span> ↗</a>
+                        </p>
+                    </div>
+                </article>
 
-            <article class="project">
-                <div class="media"><img src="img/lastseen.png" alt="Demo de LastSeen: chat y lista de miembros con hace cuánto se desconectó cada persona" loading="lazy"></div>
-                <div class="info">
-                    <p class="tag">plugin · Vencord + BetterDiscord</p>
-                    <h3>LastSeen</h3>
-                    <p lang="es">Discord te dice que alguien está desconectado, pero no desde cuándo. LastSeen pone "últ. vez hace 2 h" al lado de su nombre, en el chat y en la lista de miembros, con la fecha exacta y si estaba en el móvil o en el PC.</p>
-                    <p lang="en">Discord tells you someone is offline, but not since when. LastSeen adds "last seen 2 h ago" next to their name, in chat and in the member list, with the exact date and whether they were on mobile or desktop.</p>
-                    <ul class="stack"><li>TypeScript</li><li>React</li><li>Vencord</li><li>BetterDiscord</li></ul>
-                    <a class="link" href="https://github.com/ccrccne/vencord-lastseen" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a>
-                </div>
-            </article>
+                <article class="card project" data-cat="discord">
+                    <div class="media"><img src="img/voicelog.gif" alt="Demo de VoiceLog: historial de quién entra y sale del canal de voz" loading="lazy"></div>
+                    <div class="info">
+                        <p class="badge dc"><svg><use href="#i-chat"/></svg>Discord · plugin</p>
+                        <h3>VoiceLog</h3>
+                        <p lang="es">Alguien entra a tu llamada, dura dos segundos y se va. ¿Quién era? Una barrita discreta te dice quién entró y salió, y a qué hora.</p>
+                        <p lang="en">Someone joins your call for two seconds and leaves. Who was it? A subtle bar tells you who joined and left, and when.</p>
+                        <ul class="stack"><li>TypeScript</li><li>React</li><li>Vencord</li><li>BetterDiscord</li></ul>
+                        <p class="links"><a class="link" href="https://github.com/ccrccne/vencord-voicelog" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
+                    </div>
+                </article>
 
-            <article class="project bot">
-                <div class="info">
-                    <p class="tag">bot · Python</p>
-                    <h3><span lang="es">Bot multifunción</span><span lang="en">All-in-one bot</span></h3>
-                    <p lang="es">Mi proyecto más grande: un bot con más de 100 comandos de barra, base de datos, copias de seguridad y traducción al español y al inglés.</p>
-                    <p lang="en">My biggest project: a bot with over 100 slash commands, a database, backups, and Spanish and English translations.</p>
-                    <ul class="stack"><li>Python</li><li>discord.py</li><li>SQLite</li></ul>
-                </div>
-                <ul class="features">
-                    <li class="big"><b>122</b><span lang="es">comandos</span><span lang="en">commands</span><svg class="f-star"><use href="#sparkle"/></svg></li>
-                    <li><span lang="es">economía, banco y tienda</span><span lang="en">economy, bank and shop</span></li>
-                    <li><span lang="es">blackjack, ahorcado, buscaminas</span><span lang="en">blackjack, hangman, minesweeper</span></li>
-                    <li><span lang="es">pesca y cocina</span><span lang="en">fishing and cooking</span></li>
-                    <li><span lang="es">música y cumpleaños</span><span lang="en">music and birthdays</span></li>
-                    <li><span lang="es">moderación</span><span lang="en">moderation</span></li>
-                    <li><span lang="es">en español e inglés</span><span lang="en">in Spanish and English</span></li>
-                </ul>
-            </article>
+                <article class="card project" data-cat="discord">
+                    <div class="media"><img src="img/lastseen.png" alt="Demo de LastSeen: hace cuánto se desconectó cada persona" loading="lazy"></div>
+                    <div class="info">
+                        <p class="badge dc"><svg><use href="#i-chat"/></svg>Discord · plugin</p>
+                        <h3>LastSeen</h3>
+                        <p lang="es">Discord te dice que alguien está desconectado, pero no desde cuándo. LastSeen pone "últ. vez hace 2 h" al lado de su nombre.</p>
+                        <p lang="en">Discord tells you someone is offline, but not since when. LastSeen adds "last seen 2 h ago" next to their name.</p>
+                        <ul class="stack"><li>TypeScript</li><li>React</li><li>Vencord</li><li>BetterDiscord</li></ul>
+                        <p class="links"><a class="link" href="https://github.com/ccrccne/vencord-lastseen" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
+                    </div>
+                </article>
+
+                <article class="card project" data-cat="discord">
+                    <div class="media bot-art" aria-hidden="true">
+                        <div class="bubble b1">/pescar</div>
+                        <div class="bubble b2">🎣 <span lang="es">¡Pescaste un pez dorado!</span><span lang="en">You caught a golden fish!</span></div>
+                        <div class="bubble b3">/blackjack</div>
+                        <div class="big-num">122<small><span lang="es">comandos</span><span lang="en">commands</span></small></div>
+                    </div>
+                    <div class="info">
+                        <p class="badge dc"><svg><use href="#i-chat"/></svg>Discord · bot</p>
+                        <h3><span lang="es">Bot multifunción</span><span lang="en">All-in-one bot</span></h3>
+                        <p lang="es">Mi proyecto más grande: economía con banco y tienda, minijuegos, pesca, cocina, música, cumpleaños y moderación, en español e inglés.</p>
+                        <p lang="en">My biggest project: economy with bank and shop, mini-games, fishing, cooking, music, birthdays and moderation, in Spanish and English.</p>
+                        <ul class="stack"><li>Python</li><li>discord.py</li><li>SQLite</li></ul>
+                    </div>
+                </article>
+
+                <article class="card project" data-cat="web">
+                    <div class="media"><img src="img/portafolio.png" alt="Captura de esta web de portafolio" loading="lazy"></div>
+                    <div class="info">
+                        <p class="badge wb"><svg><use href="#i-web"/></svg>Web</p>
+                        <h3><span lang="es">Este portafolio</span><span lang="en">This portfolio</span></h3>
+                        <p lang="es">Mi página, donde junto todo lo que hago. La hice con mis colores favoritos: azul cielo y estrellas por todos lados.</p>
+                        <p lang="en">My page, where I keep everything I make. I made it with my favorite colors: sky blue and stars everywhere.</p>
+                        <ul class="stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>GitHub Pages</li></ul>
+                        <p class="links"><a class="link" href="https://github.com/ccrccne/ccrccne.github.io" target="_blank" rel="noopener"><span lang="es">Ver código</span><span lang="en">View code</span> ↗</a></p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="donde" class="where">
+            <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Dónde encontrarme</span><span lang="en">Where to find me</span></h2>
+            <div class="places">
+                <a class="place gh" href="https://github.com/ccrccne" target="_blank" rel="noopener">
+                    <svg><use href="#i-git"/></svg><b>GitHub</b><small lang="es">Todo mi código</small><small lang="en">All my code</small>
+                </a>
+                <a class="place mr" href="https://modrinth.com/user/ccrccne" target="_blank" rel="noopener">
+                    <svg><use href="#i-box"/></svg><b>Modrinth</b><small lang="es">Mis mods</small><small lang="en">My mods</small>
+                </a>
+                <a class="place cf" href="https://www.curseforge.com/minecraft/mc-mods/starfall-star-showers" target="_blank" rel="noopener">
+                    <svg><use href="#i-flame"/></svg><b>CurseForge</b><small lang="es">Starfall</small><small lang="en">Starfall</small>
+                </a>
+                <button class="place dc copy" data-copy="cancercocaine">
+                    <svg><use href="#i-chat"/></svg><b>Discord</b><small class="hint">cancercocaine · <span lang="es">copiar</span><span lang="en">copy</span></small>
+                </button>
+            </div>
         </section>
 
         <section id="servicios" class="services">
             <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Qué puedo hacer por ti</span><span lang="en">What I can build for you</span></h2>
             <div class="grid">
-                <div class="card">
-                    <svg class="card-star"><use href="#star"/></svg>
+                <div class="card service">
+                    <span class="s-icon mc"><svg><use href="#i-cube"/></svg></span>
+                    <h3><span lang="es">Un mod de Minecraft</span><span lang="en">A Minecraft mod</span></h3>
+                    <p lang="es">Bloques, objetos o eventos nuevos para Fabric, con texturas en pixel art.</p>
+                    <p lang="en">New blocks, items or events for Fabric, with pixel art textures.</p>
+                </div>
+                <div class="card service">
+                    <span class="s-icon dc"><svg><use href="#i-chat"/></svg></span>
                     <h3><span lang="es">Un bot a medida</span><span lang="en">A custom bot</span></h3>
-                    <p lang="es">Para tu servidor: comandos de barra, minijuegos, economía, avisos, moderación.</p>
-                    <p lang="en">For your server: slash commands, mini-games, economy, alerts, moderation.</p>
+                    <p lang="es">Para tu servidor de Discord: comandos, minijuegos, economía, avisos, moderación.</p>
+                    <p lang="en">For your Discord server: commands, mini-games, economy, alerts, moderation.</p>
                 </div>
-                <div class="card">
-                    <svg class="card-star"><use href="#star"/></svg>
-                    <h3><span lang="es">Arreglar o ampliar tu bot</span><span lang="en">Fix or extend your bot</span></h3>
-                    <p lang="es">Si dejó de funcionar o le falta un comando, lo reviso y lo dejo andando.</p>
-                    <p lang="en">If it stopped working or is missing a command, I'll look into it and get it running.</p>
-                </div>
-                <div class="card">
-                    <svg class="card-star"><use href="#star"/></svg>
+                <div class="card service">
+                    <span class="s-icon dc"><svg><use href="#sparkle"/></svg></span>
                     <h3><span lang="es">Un plugin para Discord</span><span lang="en">A Discord plugin</span></h3>
                     <p lang="es">Para Vencord o BetterDiscord, con guía de instalación paso a paso.</p>
                     <p lang="en">For Vencord or BetterDiscord, with a step-by-step install guide.</p>
                 </div>
-                <div class="card">
-                    <svg class="card-star"><use href="#star"/></svg>
-                    <h3><span lang="es">Un mod de Minecraft</span><span lang="en">A Minecraft mod</span></h3>
-                    <p lang="es">Bloques, objetos o eventos nuevos para Fabric, con sus texturas en pixel art.</p>
-                    <p lang="en">New blocks, items or events for Fabric, with pixel art textures.</p>
+                <div class="card service">
+                    <span class="s-icon wb"><svg><use href="#i-web"/></svg></span>
+                    <h3><span lang="es">Una página web</span><span lang="en">A website</span></h3>
+                    <p lang="es">Portafolios y páginas sencillas, bonitas y que se vean bien en el móvil.</p>
+                    <p lang="en">Portfolios and simple pages that look pretty and work great on mobile.</p>
                 </div>
             </div>
         </section>
 
         <section id="contacto" class="contact">
             <div class="contact-box">
-                <svg class="tw c1" aria-hidden="true"><use href="#sparkle"/></svg>
-                <svg class="tw c2" aria-hidden="true"><use href="#star"/></svg>
-                <h2><span lang="es">¿Hablamos?</span><span lang="en">Let's talk!</span></h2>
-                <p lang="es">Escríbeme por Discord o abre un <i>issue</i> en cualquiera de mis repositorios.</p>
-                <p lang="en">Message me on Discord or open an <i>issue</i> on any of my repositories.</p>
+                <span class="dots" aria-hidden="true"></span>
+                <i class="meteor m1" aria-hidden="true"></i><i class="meteor m3" aria-hidden="true"></i>
+                <h2><span lang="es">¿Hacemos algo juntos?</span><span lang="en">Shall we make something?</span></h2>
+                <p lang="es">Escríbeme por Discord o abre un <i>issue</i> en cualquiera de mis repositorios. Respondo rápido ✦</p>
+                <p lang="en">Message me on Discord or open an <i>issue</i> on any of my repositories. I reply fast ✦</p>
                 <div class="handles">
-                    <button class="handle" id="copy-discord" data-copy="cancercocaine">
+                    <button class="handle copy" data-copy="cancercocaine">
                         <span class="label">Discord</span>
                         <span class="value">cancercocaine</span>
-                        <span class="hint" lang="es">copiar</span><span class="hint" lang="en">copy</span>
+                        <span class="hint"><span lang="es">copiar</span><span lang="en">copy</span></span>
                     </button>
                     <a class="handle" href="https://github.com/ccrccne" target="_blank" rel="noopener">
                         <span class="label">GitHub</span>
@@ -176,9 +245,9 @@
     </main>
 
     <footer>
-        <p>ccrccne · 2026 <svg class="foot-star"><use href="#star"/></svg></p>
+        <p><span lang="es">Hecho con</span><span lang="en">Made with</span> <svg class="foot-star"><use href="#star"/></svg> <span lang="es">por</span><span lang="en">by</span> ccrccne · 2026</p>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="main.js?v=3"></script>
 </body>
 </html>
