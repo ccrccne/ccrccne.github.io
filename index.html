@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <script>
         // Elige el modo claro u oscuro antes de pintar la página (evita un destello blanco)
         try {
@@ -38,6 +38,7 @@
             <a href="#proyectos"><span lang="es">Proyectos</span><span lang="en">Projects</span></a>
             <a href="#donde"><span lang="es">Dónde estoy</span><span lang="en">Find me</span></a>
             <a href="#servicios"><span lang="es">Servicios</span><span lang="en">Services</span></a>
+            <a href="#jugar"><span lang="es">Jugar</span><span lang="en">Play</span></a>
             <a class="nav-cta" href="#contacto"><span lang="es">Contacto</span><span lang="en">Contact</span></a>
             <button class="theme" id="theme" aria-label="Cambiar entre modo claro y oscuro / Toggle light and dark mode">
                 <svg class="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" fill="currentColor"/></svg>
@@ -221,6 +222,24 @@
             </div>
         </section>
 
+        <section id="jugar" class="play">
+            <h2><svg class="h-star"><use href="#star"/></svg><span lang="es">Atrapa estrellas</span><span lang="en">Catch the stars</span></h2>
+            <p class="play-intro" lang="es">Un minijuego que hice para que descanses un ratito. Mueve la nubecita con el ratón, el dedo o las flechas y atrapa todas las estrellas que puedas. Las doradas valen 3. ¡Cuidado con las nubes de tormenta!</p>
+            <p class="play-intro" lang="en">A little game I made so you can take a break. Move the cloud with your mouse, finger or arrow keys and catch as many stars as you can. Golden ones are worth 3. Watch out for the storm clouds!</p>
+            <div class="game-box">
+                <canvas id="game" tabindex="0" aria-label="Atrapa estrellas"></canvas>
+                <div class="game-overlay" id="game-overlay">
+                    <p class="game-result" id="game-result" hidden></p>
+                    <ul class="game-legend">
+                        <li><span class="lg-star"></span><span lang="es">1 punto</span><span lang="en">1 point</span></li>
+                        <li><span class="lg-star gold"></span><span lang="es">3 puntos</span><span lang="en">3 points</span></li>
+                        <li><span class="lg-storm">☁</span><span lang="es">pierdes un corazón</span><span lang="en">lose a heart</span></li>
+                    </ul>
+                    <button class="btn primary" id="game-play"><span lang="es">Jugar</span><span lang="en">Play</span></button>
+                </div>
+            </div>
+        </section>
+
         <section id="contacto" class="contact">
             <div class="contact-box">
                 <span class="dots" aria-hidden="true"></span>
@@ -248,6 +267,7 @@
         <p><span lang="es">Hecho con</span><span lang="en">Made with</span> <svg class="foot-star"><use href="#star"/></svg> <span lang="es">por</span><span lang="en">by</span> ccrccne · 2026</p>
     </footer>
 
-    <script src="main.js?v=3"></script>
+    <script src="main.js?v=4"></script>
+    <script src="game.js?v=1"></script>
 </body>
 </html>

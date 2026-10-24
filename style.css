@@ -391,6 +391,32 @@ footer p { font: 700 14px var(--body); color: var(--muted); margin: 0; display: 
 .reveal.in { opacity: 1; translate: 0 0; }
 
 /* ---------- Pantallas medianas ---------- */
+/* Minijuego */
+.play-intro { max-width: 62ch; margin: -6px 0 22px; color: var(--muted); }
+.game-box {
+    position: relative; height: 440px; overflow: hidden;
+    border-radius: 32px; box-shadow: var(--shadow);
+    background:
+        radial-gradient(600px 300px at 85% 110%, rgba(124, 200, 242, .45), transparent 70%),
+        radial-gradient(500px 260px at 10% -10%, rgba(240, 139, 180, .22), transparent 70%),
+        linear-gradient(170deg, #0d1a3f 0%, #1b2f63 55%, #2c4a8f 100%);
+}
+#game { display: block; width: 100%; height: 100%; touch-action: none; cursor: none; outline: none; }
+.game-box:focus-within { box-shadow: var(--shadow), 0 0 0 3px var(--sky); }
+.game-overlay {
+    position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;
+    background: rgba(8, 14, 34, .35);
+}
+.game-overlay[hidden] { display: none; }
+.game-result { margin: 0; padding: 0 20px; text-align: center; color: #fff; font: 600 22px var(--round); }
+.game-result b { color: var(--star); }
+.game-overlay .btn { border: 0; cursor: pointer; font-size: 17px; padding: 14px 34px; }
+.game-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin: 0; padding: 0 16px; list-style: none; color: #d3e3f6; font-weight: 700; font-size: 14px; }
+.game-legend li { display: flex; align-items: center; gap: 7px; }
+.lg-star { width: 18px; height: 18px; background: #ffe27a; clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+.lg-star.gold { width: 22px; height: 22px; background: #ffc93c; }
+.lg-storm { color: #9aa6d6; font-size: 20px; line-height: 1; }
+
 @media (max-width: 960px) {
     .hero { grid-template-columns: 1fr; padding: 56px 32px; }
     .orbit { height: 240px; }
@@ -407,6 +433,7 @@ footer p { font: 700 14px var(--body); color: var(--muted); margin: 0; display: 
     nav a:not(.nav-cta) { display: none; }
     main { padding: 0 16px; }
     section { padding: 44px 0; }
+    .game-box { height: 380px; border-radius: 24px; }
     .hero { margin-top: 16px; padding: 44px 22px 30px; border-radius: 30px; }
     .lead { font-size: 16px; }
     .orbit { height: 210px; }
