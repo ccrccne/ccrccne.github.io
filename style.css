@@ -305,6 +305,11 @@ h1 em {
 .media { position: relative; background: #101a33; aspect-ratio: 16 / 9; overflow: hidden; }
 .media img { width: 100%; height: 100%; object-fit: cover; transition: scale .4s; }
 .project:hover .media img { scale: 1.04; }
+a.media { display: block; cursor: pointer; }
+.title-link { color: inherit; text-decoration: none; transition: color .2s; }
+.title-link:hover, .project:has(a.media:hover) .title-link { color: var(--sky-deep); }
+.title-link::after { content: " →"; opacity: 0; transition: opacity .2s; }
+.title-link:hover::after, .project:has(a.media:hover) .title-link::after { opacity: 1; }
 .project.featured .media { aspect-ratio: auto; min-height: 100%; }
 .info { padding: 22px 24px 24px; display: flex; flex-direction: column; }
 .project.featured .info { padding: 32px; justify-content: center; }
